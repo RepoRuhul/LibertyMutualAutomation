@@ -34,6 +34,7 @@ d) Tag with partial inner text from any website.
 	ebay.com----advance--------->>>>>  //a[contains(text(), 'Adva')]
 	ebay.com----daily deals----->>>>   //a[contains(text(), ' Dai')]
 	ebay.com----brand outlet---->>>>>>   //a[contains(text(), ' Brand ')]
+	
  */
 
 }

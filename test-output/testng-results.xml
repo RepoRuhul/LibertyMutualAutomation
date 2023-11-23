@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-11-23T01:29:42 EST" name="Default suite" finished-at="2023-11-23T01:30:30 EST" duration-ms="47655">
+    <groups>
+    </groups>
+    <test started-at="2023-11-23T01:29:42 EST" name="Default test" finished-at="2023-11-23T01:30:30 EST" duration-ms="47655">
+      <class name="pagesTest.HomePageTest">
+        <test-method is-config="true" signature="setUP()[pri:0, instance:pagesTest.HomePageTest@7526515b]" started-at="2023-11-23T01:29:43 EST" name="setUP" finished-at="2023-11-23T01:29:45 EST" duration-ms="2022" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUP -->
+        <test-method signature="autoButton()[pri:1, instance:pagesTest.HomePageTest@7526515b]" started-at="2023-11-23T01:29:45 EST" name="autoButton" finished-at="2023-11-23T01:29:52 EST" duration-ms="7176" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- autoButton -->
+        <test-method is-config="true" signature="tearUp()[pri:0, instance:pagesTest.HomePageTest@7526515b]" started-at="2023-11-23T01:29:52 EST" name="tearUp" finished-at="2023-11-23T01:29:52 EST" duration-ms="232" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearUp -->
+        <test-method is-config="true" signature="setUP()[pri:0, instance:pagesTest.HomePageTest@7526515b]" started-at="2023-11-23T01:29:52 EST" name="setUP" finished-at="2023-11-23T01:29:54 EST" duration-ms="2504" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUP -->
+        <test-method signature="homeButtonTest()[pri:2, instance:pagesTest.HomePageTest@7526515b]" started-at="2023-11-23T01:29:54 EST" name="homeButtonTest" finished-at="2023-11-23T01:30:02 EST" duration-ms="7072" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- homeButtonTest -->
+        <test-method is-config="true" signature="tearUp()[pri:0, instance:pagesTest.HomePageTest@7526515b]" started-at="2023-11-23T01:30:02 EST" name="tearUp" finished-at="2023-11-23T01:30:02 EST" duration-ms="109" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearUp -->
+        <test-method is-config="true" signature="setUP()[pri:0, instance:pagesTest.HomePageTest@7526515b]" started-at="2023-11-23T01:30:02 EST" name="setUP" finished-at="2023-11-23T01:30:03 EST" duration-ms="1642" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUP -->
+        <test-method signature="condoButton()[pri:3, instance:pagesTest.HomePageTest@7526515b]" started-at="2023-11-23T01:30:03 EST" name="condoButton" finished-at="2023-11-23T01:30:11 EST" duration-ms="7599" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- condoButton -->
+        <test-method is-config="true" signature="tearUp()[pri:0, instance:pagesTest.HomePageTest@7526515b]" started-at="2023-11-23T01:30:11 EST" name="tearUp" finished-at="2023-11-23T01:30:11 EST" duration-ms="204" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearUp -->
+        <test-method is-config="true" signature="setUP()[pri:0, instance:pagesTest.HomePageTest@7526515b]" started-at="2023-11-23T01:30:11 EST" name="setUP" finished-at="2023-11-23T01:30:13 EST" duration-ms="1574" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUP -->
+        <test-method signature="rentersButton()[pri:4, instance:pagesTest.HomePageTest@7526515b]" started-at="2023-11-23T01:30:13 EST" name="rentersButton" finished-at="2023-11-23T01:30:20 EST" duration-ms="7501" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- rentersButton -->
+        <test-method is-config="true" signature="tearUp()[pri:0, instance:pagesTest.HomePageTest@7526515b]" started-at="2023-11-23T01:30:20 EST" name="tearUp" finished-at="2023-11-23T01:30:20 EST" duration-ms="106" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearUp -->
+        <test-method is-config="true" signature="setUP()[pri:0, instance:pagesTest.HomePageTest@7526515b]" started-at="2023-11-23T01:30:20 EST" name="setUP" finished-at="2023-11-23T01:30:22 EST" duration-ms="1466" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUP -->
+        <test-method signature="LoginButtonTest()[pri:5, instance:pagesTest.HomePageTest@7526515b]" started-at="2023-11-23T01:30:22 EST" name="LoginButtonTest" finished-at="2023-11-23T01:30:30 EST" duration-ms="8275" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginButtonTest -->
+        <test-method is-config="true" signature="tearUp()[pri:0, instance:pagesTest.HomePageTest@7526515b]" started-at="2023-11-23T01:30:30 EST" name="tearUp" finished-at="2023-11-23T01:30:30 EST" duration-ms="125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearUp -->
+      </class> <!-- pagesTest.HomePageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

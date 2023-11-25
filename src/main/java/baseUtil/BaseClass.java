@@ -4,27 +4,55 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.HomePage;
 
 public class BaseClass {
-	public ChromeDriver driver; // or we can use protected type
+	public WebDriver driver; // or we can use protected type
+	// public ChromeDriver driver; // or we can use protected type
+	// public FirefoxDriver driver; // or we can use protected type
+	// public EdgeDriver driver; // or we can use protected type
+
 	public HomePage homePage; // or we can use protected type
 
 	@BeforeMethod
 	public void setUP() {
 
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver.exe");
-
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
 		driver = new ChromeDriver();
+
+		/*
+		 * // For Firefox driver System.setProperty("webdriver.gecko.driver",
+		 * "./driver/geckodriver.exe"); driver = new FirefoxDriver();
+		 */
+
+		/*
+		 * // For edge Driver System.setProperty("webdriver.edge.driver",
+		 * "./driver/msedgedriver.exe"); driver = new EdgeDriver();
+		 */
+
+		/*
+		 * //WebDriverManager for chromedriver WebDriverManager.chromedriver().setup();
+		 * driver = new ChromeDriver();
+		 */
+
+		/*
+		 * // WebDriverManager for firefoxdriver
+		 * WebDriverManager.firefoxdriver().setup(); driver = new FirefoxDriver();
+		 */
+
+		/*
+		 * //WebDriverManager for edgedriver WebDriverManager.edgedriver().setup();
+		 * driver = new EdgeDriver();
+		 */
+
 		driver.manage().window().maximize();
-		// We can also use fullscreen() instead of maximize()
-		// driver.manage().window().fullscreen();
 		driver.manage().deleteAllCookies();
 		driver.get("https://www.libertymutual.com/");
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));

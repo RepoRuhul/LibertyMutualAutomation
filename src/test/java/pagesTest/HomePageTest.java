@@ -1,8 +1,14 @@
 package pagesTest;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import baseUtil.BaseClass;
 
@@ -195,7 +201,7 @@ public class HomePageTest extends BaseClass {
 	}
 
 	// use of navigate()
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void use_of_navigate_method() throws InterruptedException {
 		Thread.sleep(5000);
 		driver.navigate().to(
@@ -207,6 +213,203 @@ public class HomePageTest extends BaseClass {
 		Thread.sleep(4000);
 		driver.navigate().refresh();
 		Thread.sleep(4000);
+	}
+
+	@Test(enabled = false)
+	public void set_a_specific_size_for_window() throws InterruptedException {
+		Thread.sleep(4000);
+		// we will get the size of Liberty mutual insurance window
+		System.out.println("the size of the maximize screen is : " + driver.manage().window().getSize());
+		dimension = new org.openqa.selenium.Dimension(1000, 750);
+		driver.manage().window().setSize(dimension);
+		Thread.sleep(5000);
+		System.out.println("the size of the my set screen is : " + driver.manage().window().getSize());
+
+		// Extra related to this method, although you can skip
+		Thread.sleep(4000);
+		driver.navigate().to("https://www.bankofamerica.com/");
+		Thread.sleep(4000);
+		System.out.println("The size of the set screen is: " + driver.manage().window().getSize());
+		driver.manage().window().maximize();
+		Thread.sleep(5000);
+		System.out.println("The size of the maximize screen is: " + driver.manage().window().getSize());
+		Thread.sleep(5000);
+		driver.manage().window().setSize(dimension); // just to show again the set size
+		Thread.sleep(5000);
+		System.out.println("The size of the set screen is: " + driver.manage().window().getSize());
+		Thread.sleep(5000);
+		driver.manage().window().fullscreen();
+		Thread.sleep(5000);
+		System.out.println("The size of the full screen is: " + driver.manage().window().getSize());
+	}
+
+	@Test(enabled = false)
+	public void logoDisplayedTest01() {
+		homePage.logoDisplayed(); // Actual Outcome by selenium
+		Assert.assertTrue(true); // expected result
+	}
+
+	@Test(enabled = false)
+	public void logoDisplayedTest02() {
+		homePage.logoDisplayed(); // Actual Outcome by selenium
+		Assert.assertTrue(false); // expected result
+	}
+
+	@Test(enabled = false)
+	public void logoDisplayedTest03() {
+		homePage.logoDisplayed(); // Actual Outcome by selenium
+		Assert.assertTrue(true, "the application logo is not displayed");
+	}
+
+	@Test(enabled = false)
+	public void logoDisplayedTest04() {
+		homePage.logoDisplayed(); // Actual Outcome by selenium
+		Assert.assertTrue(false, "the application logo is not displayed");
+	}
+
+	@Test(enabled = false)
+	public void logoDisplayedTest05() {
+		homePage.logoDisplayed(); // Actual Outcome by selenium
+//		Assert.assertTrue(false, "the application logo is not displayed"); //expected result
+		Assert.assertFalse(false, "the application logo is not displayed");
+	}
+
+	@Test(enabled = false)
+	public void logoDisplayedTest06() {
+		homePage.logoDisplayed(); // Actual Outcome by selenium
+//		Assert.assertTrue(false, "the application logo is not displayed"); //expected result
+		Assert.assertFalse(true, "the application logo is not displayed");
+	}
+
+	@Test(enabled = false)
+	public void use_of_getTitle_method01() throws InterruptedException {
+		String actual = driver.getTitle();
+		Thread.sleep(5000);
+		System.out.println("The title of the Page is: " + actual);
+	}
+
+	// hard assert and it is pass
+	@Test(enabled = false)
+	public void use_of_getTitle_method_in_home_page_with_assertion01() throws InterruptedException {
+
+		String actual = driver.getTitle();
+		System.out.println("The Title of the page is: " + actual);
+		Thread.sleep(5000);
+
+		String expected = "Liberty Mutual: A trusted insurance company for over 100 years";
+		Assert.assertEquals(actual, expected, "home page title doesn't match");
+		String currentURL = driver.getCurrentUrl();
+		System.out.println("the current url is: " + currentURL);
+
+	}
+
+	// hard assert and it is fail
+	@Test(enabled = false)
+	public void use_of_getTitle_method_in_home_page_with_assertion02() throws InterruptedException {
+		String actual = driver.getTitle();
+		System.out.println("The Title of the page is: " + actual);
+		Thread.sleep(5000);
+		String expected = "Liberty Mutual: A trusted insurance company for over 100 years              ";
+		Assert.assertEquals(actual, expected, "home page title doesn't match");
+		// hard assert will not execute the next steps
+		String currentURL = driver.getCurrentUrl();
+		System.out.println("the current url is: " + currentURL);
+
+	}
+
+	// soft assert and it is pass
+	@Test(enabled = false)
+	public void use_of_getTitle_method_in_home_page_with_assertion03() throws InterruptedException {
+		String actual = driver.getTitle();
+		System.out.println("The Title of the page is: " + actual);
+		Thread.sleep(5000);
+		String expected = "Liberty Mutual: A trusted insurance company for over 100 years              ";
+
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals(actual, expected, "home page title doesn't match");
+		// soft assertion will execute the next steps
+		String currentURL = driver.getCurrentUrl();
+		System.out.println("the current url is: " + currentURL);
+
+	}
+
+	@Test(enabled = false)
+	public void use_of_mouse_hoverAction_on_providers() throws InterruptedException {
+		Thread.sleep(4000);
+		driver.navigate().to("https://www.fideliscare.org/");
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		WebElement providers = driver.findElement(By.xpath("//span[contains(text(), 'Providers')]"));
+		Thread.sleep(4000);
+		// Actions actions = new Actions(driver);
+		actions.moveToElement(providers).build().perform();
+		Thread.sleep(6000);
+
+	}
+
+	// Regular click method
+	@Test(enabled = false)
+	public void use_of_click_method_in_loginButtonTest() throws InterruptedException {
+		driver.findElement(By.cssSelector("span.jsx-2458328595.linkText")).click();
+		Thread.sleep(3000);
+	}
+
+	// alternate of click method
+	@Test(enabled = false)
+	public void alternate_of_click_method_of_log_in_button_test() throws InterruptedException {
+		driver.findElement(By.cssSelector("span.jsx-2458328595.linkText")).click();
+		Thread.sleep(4000);
+
+	}
+
+	// alternate of click()
+	@Test(enabled = false)
+	public void alternate_of_click_method_in_loginButtonTest01() throws InterruptedException {
+		driver.findElement(By.cssSelector("span.jsx-2458328595.linkText")).sendKeys(Keys.ENTER);
+		Thread.sleep(3000);
+	}
+
+	// alternate of click()
+	@Test(enabled = false)
+	public void alternate_of_click_method_in_loginButtonTest02() throws InterruptedException {
+		driver.findElement(By.cssSelector("span.jsx-2458328595.linkText")).sendKeys(Keys.RETURN);
+		Thread.sleep(3000);
+	}
+
+	// alternate of click()
+	@Test(enabled = false)
+	public void alternate_of_click_method_in_loginButtonTest03() throws InterruptedException {
+		WebElement loginbutton = driver.findElement(By.xpath("//span[contains(text(),'Log in')]"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click()", loginbutton);
+		Thread.sleep(4000);
+
+	}
+
+	// login process regular to compare with line 579
+	@Test(enabled = false)
+	public void use_of_sendKeys_method_then_click() throws InterruptedException {
+		driver.findElement(By.xpath("//input[@class='lm-Field-input']")).sendKeys("14215");
+		Thread.sleep(4000);
+		driver.findElement(By.xpath(
+				"(//input[@class='jsx-3418619203 button']//following-sibling::div[@class='jsx-3418619203 outline']//parent::div[@class='jsx-1608262059 inner jsx-3727320559 jsx-2537838520 jsx-454447392 jsx-2014647566'])[1]"))
+				.click();
+		Thread.sleep(4000);
+	}
+
+	// alternative of sendKeys(), please remember
+	@Test(enabled = true)
+	public void use_of_sendKeys_method_by_javascriptExecutor_then_click() throws InterruptedException {
+		WebElement zipcode = driver.findElement(By.xpath("//input[@class='lm-Field-input']"));
+		WebElement getMyPrice = driver.findElement(By.xpath("(//button[@type='submit'])[2]"));
+		// how to send text inside a field by JavascriptExecutor, alternate of
+		// sendKeys()
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value = '14215' ", zipcode);
+		Thread.sleep(4000);
+		js.executeScript("arguments[0].click()", getMyPrice);
+		Thread.sleep(4000);
+
 	}
 
 }

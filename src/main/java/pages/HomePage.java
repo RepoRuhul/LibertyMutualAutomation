@@ -34,11 +34,12 @@ public class HomePage {
 	@FindBy(xpath = "//input[@id='quote-zipCode-input']")
 	WebElement zipCodeField;
 
-	@FindBy(xpath  = "(//a[@data-action='action url'])[1]")
+	@FindBy(xpath = "(//a[@data-action='action url'])[1]")
 	WebElement logo;
 
 	@FindBy(xpath = "//button[@type='submit']//child::span[@class='lmig-Button-text' and text()='Get my price']")
 	WebElement getMyprice;
+
 	public void clickAutoButton() throws InterruptedException {
 		autoButton.click();
 		Thread.sleep(7000);
@@ -58,11 +59,14 @@ public class HomePage {
 		rentersButton.click();
 		Thread.sleep(7000);
 	}
-	//use of common method clickElement(WebElement)
+
+	// use of common method clickElement(WebElement)
 	public void clickLoginButton() throws InterruptedException {
-		clickElement(loginButton);;
+		clickElement(loginButton);
+		;
 		Thread.sleep(7000);
 	}
+
 	// I used sendKeys()method to put the text in the zipCodeField
 	public void inputTextInZipCodeField() {
 		zipCodeField.sendKeys("14215");
@@ -73,21 +77,25 @@ public class HomePage {
 		}
 
 	}
+
 	// I validated the logo here
 	public void clickLogo() throws InterruptedException {
 		logo.click();
 		Thread.sleep(7000);
 	}
-	//I'm used both common action here
-	public void inputTextInZipeCodeFieldThenClickGetMyPriceButton()throws InterruptedException {
+
+	// I'm used both common action here
+	public void inputTextInZipeCodeFieldThenClickGetMyPriceButton() throws InterruptedException {
 		inputText(zipCodeField, "14215");
 		Thread.sleep(5000);
 		clickElement(getMyprice);
 		Thread.sleep(5000);
 	}
-	
-	
-	
-	
+
+	public boolean logoDisplayed() {
+//	boolean flag = logo.isDisplayed();
+//		return flag;
+		return logo.isDisplayed();
+	}
 
 }
